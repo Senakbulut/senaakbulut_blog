@@ -17,6 +17,20 @@ export interface PostData {
     featuredImage: {
       url: string;
     };
+    content: {
+      raw: {
+        children: {
+          type(
+            index: number,
+            children: any[],
+            typeObj: { children: {}[] },
+            type: any
+          ): any;
+          children: {}[];
+        }[];
+        type: "";
+      };
+    };
   };
 }
 const PostCard = ({ post }: PostData) => {

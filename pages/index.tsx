@@ -29,6 +29,20 @@ const Home = ({ posts }: { posts: [] }) => {
                 featuredImage: {
                   url: string;
                 };
+                content: {
+                  raw: {
+                    children: {
+                      type(
+                        index: number,
+                        children: any[],
+                        typeObj: { children: {}[] },
+                        type: any
+                      ): any;
+                      children: {}[];
+                    }[];
+                    type: "";
+                  };
+                };
               };
             }) => (
               <PostCard post={post.node} key={post.title} />

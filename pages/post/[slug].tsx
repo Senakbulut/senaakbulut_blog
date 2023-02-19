@@ -9,17 +9,13 @@ import {
 } from "../../components";
 import { getPostDetails, getPosts } from "../../services";
 
-const PostDetails = ({
-  post,
-}: {
-  post: { slug: ""; categories: { slug: "" }[] };
-}) => {
+const PostDetails = ({ post }: { post: any }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8">
-          <PostDetail />
-          <Author />
+          <PostDetail post={post} />
+          <Author author={post.author}/>
           <CommentsForm />
           <Comments />
         </div>
@@ -28,7 +24,7 @@ const PostDetails = ({
             <PostWidget
               slug={post.slug}
               categories={post.categories.map(
-                (category) => category.slug as string
+                (category: { slug: "" }) => category.slug as string
               )}
             />
             <Categories />
