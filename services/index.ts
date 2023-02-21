@@ -111,7 +111,10 @@ export const getSimilarPosts = async (categories: [string], slug: string) => {
       }
     }
   `;
-  const result = await request(graphqlAPI as string, query, {categories, slug});
+  const result = await request(graphqlAPI as string, query, {
+    categories,
+    slug,
+  });
 
   return result.posts;
 };
@@ -128,4 +131,16 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI as string, query);
 
   return result.categories;
+};
+
+export const submitComment = async (obj:any) => {
+  const result = await fetch('/api/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(obj),
+  });
+
+  return result.json();
 };
