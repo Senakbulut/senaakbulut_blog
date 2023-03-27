@@ -32,7 +32,7 @@ const PostWidget = ({ categories, slug }: Posts) => {
             <img
               src={post.featuredImage.url}
               alt={post.title}
-              className="h-8 align-middle rounded-full"
+              className="h-8 align-middle rounded-full w-full"
             />
           </div>
           <div className="flex-grow ml-4">

@@ -1,6 +1,8 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { submitComment } from "../services";
+
 const CommentsForm = ({ slug }: { slug: string }) => {
+
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -8,12 +10,15 @@ const CommentsForm = ({ slug }: { slug: string }) => {
   const nameEl = useRef() as MutableRefObject<HTMLInputElement>;
   const emailEl = useRef() as MutableRefObject<HTMLInputElement>;
   const storeDataEl = useRef() as MutableRefObject<HTMLInputElement>;
+
   useEffect(() => {
     nameEl.current.value = window.localStorage.getItem("name") as string;
     emailEl.current.value = window.localStorage.getItem("email") as string;
   }, []);
+
   const handlePostSubmission = () => {
     setError(false);
+
     const { value: comment } = commentEl.current;
     const { value: name } = nameEl.current;
     const { value: email } = emailEl.current;
@@ -22,6 +27,7 @@ const CommentsForm = ({ slug }: { slug: string }) => {
       setError(true);
       return;
     }
+
     const commentObj = { name, comment, email, slug };
     if (storeData) {
       window.localStorage.setItem("name", name);
@@ -30,6 +36,7 @@ const CommentsForm = ({ slug }: { slug: string }) => {
       window.localStorage.removeItem("name");
       window.localStorage.removeItem("email");
     }
+
     submitComment(commentObj).then((res) => {
       setShowSuccessMessage(true);
       setTimeout(() => {
