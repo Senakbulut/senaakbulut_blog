@@ -44,6 +44,9 @@ const CommentsForm = ({ slug }: { slug: string }) => {
       }, 3000);
     });
   };
+  const buttonStyle = {
+    background: '#EF888C',
+  };
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
@@ -95,7 +98,8 @@ const CommentsForm = ({ slug }: { slug: string }) => {
         <button
           type="button"
           onClick={handlePostSubmission}
-          className="transition duration-500 ease hover:bg-indigo-900 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
+          className="transition duration-500 ease hover:bg-indigo-900 inline-block text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
+          style={buttonStyle}
         >
           Post Comment
         </button>
