@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import {
   Author,
   Categories,
@@ -7,10 +8,15 @@ import {
   PostDetail,
   PostWidget,
   ScrollUpButton,
+  Loader,
 } from "../../components";
 import { getPostDetails, getPosts } from "../../services";
 
 const PostDetails = ({ post }: { post: any }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Loader />;
+  }
   return (
     <div className="container mx-auto px-10 mb-8">
       <ScrollUpButton />
