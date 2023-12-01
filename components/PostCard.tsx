@@ -36,7 +36,10 @@ export interface PostData {
 const PostCard = ({ post }: PostData) => {
 
   const buttonStyle = {
-    background: "#EF888C",
+    background: "#2D9596",
+  };
+  const headerStyle = {
+    color: "#265073",
   };
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
@@ -47,7 +50,7 @@ const PostCard = ({ post }: PostData) => {
           className="absolute h-80 w-full object-contain shadow-lg rounded-t-lg lg:rounded-lg object-cover"
         />
       </div>
-      <h1 className="transition duration-700 text-center mb-8 cursor-pointer text-3xl font-semibold px-4">
+      <h1 className="transition duration-700 text-center mb-8 cursor-pointer text-3xl font-semibold px-4" style={headerStyle}>
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items:center justify-center mb-8 w-full">

@@ -45,7 +45,7 @@ const CommentsForm = ({ slug }: { slug: string }) => {
     });
   };
   const buttonStyle = {
-    background: '#EF888C',
+    background: '#2D9596',
   };
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">

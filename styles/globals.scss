@@ -4,6 +4,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
+$background-color: #9ad0c2;
+$header: #265073;
+$button-color: #2D9596;
+
 html,
 body {
   padding: 0;
@@ -14,9 +18,7 @@ body {
     content: "";
     width: 100%;
     height: 100vh;
-    //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
-    // background: #D3D3D3;
-    background-image: url("../public/bg.png");
+    background: $background-color;
     position: fixed;
     left: 0;
     top: 0;
@@ -26,7 +28,21 @@ body {
     background-size: cover;
   }
 }
-
+.top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $button-color;
+  border-radius: 50%;
+  padding: 10px;
+  svg{
+    width: 30px;
+    fill: white;
+  }
+  &:hover{
+    box-shadow: 1px 0px 10px 1px #265073;
+  }
+}
 .text-shadow {
   text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
 }
@@ -50,6 +66,18 @@ body {
     &:hover {
       width: 60px;
     }
+  }
+}
+.category-name {
+  color: $header;
+  &:hover {
+    font-weight: 600;
+  }
+}
+.header-links {
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }
 

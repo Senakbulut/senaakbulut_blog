@@ -75,6 +75,9 @@ const PostDetail = ({ post }: PostData) => {
         return modifiedText;
     }
   };
+  const headerStyle = {
+    color: "#265073",
+  };
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
@@ -115,7 +118,7 @@ const PostDetail = ({ post }: PostData) => {
             <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+        <h1 className="mb-8 text-3xl font-semibold" style={headerStyle}>{post.title}</h1>
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item: any, itemindex) =>
             getContentFragment(itemindex, item.text, item)

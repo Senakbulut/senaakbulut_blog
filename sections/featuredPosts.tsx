@@ -36,7 +36,7 @@ const FeaturedPosts = () => {
   }, []);
 
   const buttonStyle = {
-    background: '#EF888C',
+    background: '#2D9596',
   };
 
   const customLeftArrow = (
